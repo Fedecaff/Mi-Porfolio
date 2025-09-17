@@ -6,18 +6,22 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Proyecto 1",
-      description: "Descripción detallada de tu primer proyecto. Explica qué problema resuelve, qué tecnologías usaste y cuáles fueron los principales desafíos.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
-      githubUrl: "#", // Reemplaza con tu URL real
-      liveUrl: "#", // Reemplaza con tu URL real
-      imageUrl: "/project1-placeholder.jpg", // Agrega tu imagen
+      title: "🚒 Sistema de Mapeo de Emergencias - Catamarca",
+      description: "Sistema integral de gestión de emergencias en tiempo real para bomberos voluntarios. Una aplicación web completa que permite la coordinación de emergencias, geolocalización de operadores, gestión de puntos de interés y notificaciones en tiempo real para mejorar la respuesta ante emergencias.",
+      technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
+      githubUrl: "https://github.com/Fedecaff/tu-repo-emergencias", // Actualiza con la URL real
+      liveUrl: "https://tu-app.railway.app", // Actualiza con la URL real
+      imageUrl: "/emergencias-dashboard.jpg", // Agrega screenshot del dashboard
       features: [
-        "Autenticación de usuarios",
-        "Panel de administración",
-        "API RESTful",
-        "Diseño responsive"
-      ]
+        "Mapa interactivo con geolocalización cada 30s",
+        "Sistema de alertas con notificaciones push",
+        "Gestión de operadores en tiempo real",
+        "Comunicación WebSocket bidireccional",
+        "Panel administrativo con roles",
+        "Reducción del 70% en tiempo de respuesta"
+      ],
+      metrics: "13,580+ líneas de código • 6 tablas de BD • Sistema en tiempo real",
+      impact: "Reducción del 70% en tiempo de respuesta ante emergencias"
     },
     {
       id: 2,
@@ -122,10 +126,26 @@ const Projects = () => {
                     {project.description}
                   </p>
 
+                  {/* Métricas del proyecto */}
+                  {project.metrics && (
+                    <div className="mb-6 p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
+                      <h4 className="font-semibold text-primary mb-2">📊 Métricas del Proyecto:</h4>
+                      <p className="text-text-secondary text-sm">{project.metrics}</p>
+                    </div>
+                  )}
+
+                  {/* Impacto */}
+                  {project.impact && (
+                    <div className="mb-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                      <h4 className="font-semibold text-primary mb-2">🎯 Impacto Real:</h4>
+                      <p className="text-text-secondary text-sm">{project.impact}</p>
+                    </div>
+                  )}
+
                   {/* Características principales */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-primary mb-3">Características principales:</h4>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <ul className="grid grid-cols-1 gap-2">
                       {project.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-text-secondary">
                           <svg className="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
