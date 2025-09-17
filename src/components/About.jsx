@@ -72,7 +72,7 @@ const About = () => {
                 {/* Foto profesional de Federico */}
                 <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-lg">
                   <img 
-                    src="/imagen/WhatsApp Image 2025-05-28 at 09.45.12.jpeg" 
+                    src="/imagen/federico-foto.jpg" 
                     alt="Federico Gabriel Gomez Caffettaro" 
                     className="w-full h-full object-cover"
                     onError={(e) => {
