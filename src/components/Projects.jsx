@@ -10,7 +10,7 @@ const Projects = () => {
       description: "Sistema integral de gestión de emergencias en tiempo real para bomberos voluntarios. Una aplicación web completa que permite la coordinación de emergencias, geolocalización de operadores, gestión de puntos de interés y notificaciones en tiempo real para mejorar la respuesta ante emergencias.",
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
       githubUrl: "https://github.com/Fedecaff/mapa-emergencias",
-      liveUrl: "https://mapa-emergencias-git-main-federicos-projects-f9ae1da4.vercel.app/"
+      liveUrl: "https://mapa-emergencias-git-main-federicos-projects-f9ae1da4.vercel.app/",
       imageUrl: "/emergencias-dashboard.jpg", // Agrega screenshot del dashboard
       features: [
         "Mapa interactivo con geolocalización cada 30s",
