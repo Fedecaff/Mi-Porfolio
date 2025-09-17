@@ -11,7 +11,7 @@ const Projects = () => {
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
       githubUrl: "https://github.com/Fedecaff/mapa-emergencias",
       liveUrl: "https://mapa-emergencias-git-main-federicos-projects-f9ae1da4.vercel.app/",
-      imageUrl: "/emergencias-dashboard.jpg", // Agrega screenshot del dashboard
+      imageUrl: "/imagen/captura pro bombero.png",
       features: [
         "Mapa interactivo con geolocalización cada 30s",
         "Sistema de alertas con notificaciones push",
@@ -34,7 +34,7 @@ const Projects = () => {
       technologies: ["HTML5", "CSS3", "JavaScript ES6+", "Google Fonts", "CSS Grid", "Flexbox", "Media Queries"],
       githubUrl: "https://github.com/Fedecaff/Boda",
       liveUrl: "https://boda-fede-geor.netlify.app/",
-      imageUrl: "/boda-screenshot.jpg", // Agrega screenshot de la invitación
+      imageUrl: "/imagen/captura pro boda.png",
       features: [
         "Diseño responsivo adaptable a todos los dispositivos",
         "Cuenta regresiva dinámica en tiempo real",
@@ -82,17 +82,27 @@ const Projects = () => {
                 {/* Imagen del proyecto */}
                 <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <div className="relative group">
-                    <div className="aspect-video bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl flex items-center justify-center overflow-hidden">
-                      {/* Placeholder para la imagen del proyecto */}
-                      <div className="text-center">
-                        <svg className="w-16 h-16 text-accent/60 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <p className="text-text-secondary text-sm">
-                          Screenshot del proyecto
-                          <br />
-                          (agregar imagen)
-                        </p>
+                    <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                      <img 
+                        src={project.imageUrl} 
+                        alt={`Screenshot de ${project.title}`}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback si no se carga la imagen
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      {/* Fallback si no se carga la imagen */}
+                      <div className="w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl hidden items-center justify-center">
+                        <div className="text-center">
+                          <svg className="w-16 h-16 text-accent/60 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          <p className="text-text-secondary text-sm">
+                            Screenshot del proyecto
+                          </p>
+                        </div>
                       </div>
                     </div>
                     
