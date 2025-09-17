@@ -29,7 +29,7 @@ const Projects = () => {
       description: "Sitio web interactivo diseñado como invitación digital para una boda, desarrollado con HTML5, CSS3 y JavaScript vanilla. El proyecto presenta una experiencia inmersiva y elegante que combina funcionalidad moderna con un diseño romántico y sofisticado.",
       technologies: ["HTML5", "CSS3", "JavaScript ES6+", "Google Fonts", "CSS Grid", "Flexbox", "Media Queries"],
       githubUrl: "https://github.com/Fedecaff/Boda",
-      liveUrl: "https://boda-fede-geor.netlify.app/"
+      liveUrl: "https://boda-fede-geor.netlify.app/",
       imageUrl: "/boda-screenshot.jpg", // Agrega screenshot de la invitación
       features: [
         "Diseño responsivo adaptable a todos los dispositivos",
