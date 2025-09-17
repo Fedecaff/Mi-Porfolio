@@ -69,19 +69,32 @@ const About = () => {
               className="flex justify-center"
             >
               <div className="relative">
-                {/* Placeholder para foto - puedes agregar tu foto aquí */}
-                <div className="w-80 h-80 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-accent/30 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <svg className="w-16 h-16 text-accent" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                      </svg>
+                {/* Foto profesional de Federico */}
+                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/imagen/WhatsApp Image 2025-05-28 at 09.45.12.jpeg" 
+                    alt="Federico Gabriel Gomez Caffettaro" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback si no encuentra la imagen
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  {/* Fallback si no se carga la imagen */}
+                  <div className="w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl hidden items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-32 h-32 bg-accent/30 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg className="w-16 h-16 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                      </div>
+                      <p className="text-text-secondary text-sm">
+                        Federico Gabriel
+                        <br />
+                        Gomez Caffettaro
+                      </p>
                     </div>
-                    <p className="text-text-secondary text-sm">
-                      Foto profesional
-                      <br />
-                      (próximamente)
-                    </p>
                   </div>
                 </div>
                 

@@ -9,8 +9,8 @@ const Projects = () => {
       title: "🚒 Sistema de Mapeo de Emergencias - Catamarca",
       description: "Sistema integral de gestión de emergencias en tiempo real para bomberos voluntarios. Una aplicación web completa que permite la coordinación de emergencias, geolocalización de operadores, gestión de puntos de interés y notificaciones en tiempo real para mejorar la respuesta ante emergencias.",
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
-      githubUrl: "https://github.com/Fedecaff/tu-repo-emergencias", // Actualiza con la URL real
-      liveUrl: "https://tu-app.railway.app", // Actualiza con la URL real
+      githubUrl: "https://github.com/Fedecaff/mapa-emergencias",
+      liveUrl: "", // Demo temporalmente no disponible (Railway expirado)
       imageUrl: "/emergencias-dashboard.jpg", // Agrega screenshot del dashboard
       features: [
         "Mapa interactivo con geolocalización cada 30s",
@@ -18,25 +18,29 @@ const Projects = () => {
         "Gestión de operadores en tiempo real",
         "Comunicación WebSocket bidireccional",
         "Panel administrativo con roles",
-        "Reducción del 70% en tiempo de respuesta"
+        "Integración con servicios de mapas y geolocalización"
       ],
       metrics: "13,580+ líneas de código • 6 tablas de BD • Sistema en tiempo real",
-      impact: "Reducción del 70% en tiempo de respuesta ante emergencias"
+      impact: "Sistema completo para coordinación de emergencias con tecnología moderna"
     },
     {
       id: 2,
-      title: "Proyecto 2", 
-      description: "Descripción detallada de tu segundo proyecto. Menciona las funcionalidades principales, el proceso de desarrollo y los resultados obtenidos.",
-      technologies: ["JavaScript", "Express.js", "MongoDB", "Bootstrap"],
-      githubUrl: "#", // Reemplaza con tu URL real
-      liveUrl: "#", // Reemplaza con tu URL real
-      imageUrl: "/project2-placeholder.jpg", // Agrega tu imagen
+      title: "💍 Invitación Digital de Boda - Federico & Georgina",
+      description: "Sitio web interactivo diseñado como invitación digital para una boda, desarrollado con HTML5, CSS3 y JavaScript vanilla. El proyecto presenta una experiencia inmersiva y elegante que combina funcionalidad moderna con un diseño romántico y sofisticado.",
+      technologies: ["HTML5", "CSS3", "JavaScript ES6+", "Google Fonts", "CSS Grid", "Flexbox", "Media Queries"],
+      githubUrl: "https://github.com/Fedecaff/Boda",
+      liveUrl: "https://boda-fede-geor.netlify.app/"
+      imageUrl: "/boda-screenshot.jpg", // Agrega screenshot de la invitación
       features: [
-        "CRUD completo",
-        "Integración con APIs",
-        "Validación de datos",
-        "Optimización de rendimiento"
-      ]
+        "Diseño responsivo adaptable a todos los dispositivos",
+        "Cuenta regresiva dinámica en tiempo real",
+        "Carrusel de imágenes interactivo",
+        "Reproductor de audio con controles personalizados",
+        "Modal interactivo para información adicional",
+        "Animaciones CSS y efectos visuales elegantes"
+      ],
+      metrics: "Desarrollo frontend completo • Diseño mobile-first • UX/UI personalizada",
+      impact: "Experiencia web memorable que combina funcionalidad moderna con diseño romántico"
     }
   ]
 
