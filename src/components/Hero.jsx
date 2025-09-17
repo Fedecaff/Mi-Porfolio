@@ -1,0 +1,91 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+
+const Hero = () => {
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-bg-white to-bg-light">
+      <div className="section-padding container-max text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Federico Gabriel
+            <br />
+            <span className="text-accent">Gomez Caffettaro</span>
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl md:text-2xl text-text-secondary mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Desarrollador Web Full Stack
+          </motion.p>
+          
+          <motion.p 
+            className="text-lg text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            Creando experiencias digitales modernas con código limpio y diseño funcional
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a 
+              href="#projects" 
+              className="btn-primary inline-flex items-center justify-center"
+            >
+              Ver Proyectos
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </a>
+            
+            <a 
+              href="#contact" 
+              className="px-6 py-3 rounded-lg font-medium border-2 border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
+            >
+              Contacto
+            </a>
+          </motion.div>
+        </motion.div>
+        
+        {/* Scroll indicator */}
+        <motion.div 
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-6 h-10 border-2 border-text-secondary rounded-full flex justify-center"
+          >
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-1 h-3 bg-text-secondary rounded-full mt-2"
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+export default Hero
