@@ -1,34 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Aquí puedes agregar la lógica para enviar el formulario
-    // Por ejemplo, usando Netlify Forms o un servicio como EmailJS
-    console.log('Formulario enviado:', formData)
-    
-    // Crear mailto link como alternativa
-    const mailtoLink = `mailto:federico.gomez.sc@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`
-    )}`
-    
-    window.location.href = mailtoLink
-  }
 
   const socialLinks = [
     {
@@ -151,92 +124,29 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Formulario de contacto */}
+          {/* Mensaje simple de contacto */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
+            className="text-center"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Nombre *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-secondary border border-gray-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all duration-300"
-                    placeholder="Tu nombre"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-secondary border border-gray-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all duration-300"
-                    placeholder="tu@email.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  Asunto *
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-secondary border border-gray-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all duration-300"
-                  placeholder="Asunto del mensaje"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Mensaje *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-secondary border border-gray-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all duration-300 resize-vertical"
-                  placeholder="Cuéntame sobre tu proyecto..."
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-accent text-white px-6 py-4 rounded-lg font-medium hover:bg-accent/90 transition-colors duration-300 flex items-center justify-center"
+            <div className="bg-secondary/50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold mb-4">¿Interesado en trabajar juntos?</h3>
+              <p className="text-gray-300 mb-6">
+                Envíame un email directamente y te responderé lo antes posible.
+              </p>
+              <a 
+                href="mailto:federico.gomez.sc@gmail.com?subject=Oportunidad Laboral"
+                className="btn-primary inline-flex items-center text-lg px-8 py-4"
               >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Enviar Mensaje
-              </motion.button>
-            </form>
+                Enviar Email
+              </a>
+            </div>
           </motion.div>
         </div>
 

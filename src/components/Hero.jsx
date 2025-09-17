@@ -10,27 +10,15 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-4"
-          >
-            <div className="text-6xl md:text-8xl font-bold text-primary mb-2 tracking-wider">
-              FGC
-            </div>
-            <div className="text-lg md:text-xl text-text-secondary font-medium">
-              Federico Gabriel Gomez Caffettaro
-            </div>
-          </motion.div>
-          
           <motion.h1 
-            className="text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-accent">Portfolio</span>
+            Federico Gabriel
+            <br />
+            <span className="text-accent">Gomez Caffettaro</span>
           </motion.h1>
           
           <motion.p 
