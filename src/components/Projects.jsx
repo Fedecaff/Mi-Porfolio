@@ -10,7 +10,7 @@ const Projects = () => {
       description: "Sistema integral de gestión de emergencias en tiempo real para bomberos voluntarios. Una aplicación web completa que permite la coordinación de emergencias, geolocalización de operadores, gestión de puntos de interés y notificaciones en tiempo real para mejorar la respuesta ante emergencias.",
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
       githubUrl: "https://github.com/Fedecaff/mapa-emergencias",
-      liveUrl: "https://mapa-emergencias-git-main-federicos-projects-f9ae1da4.vercel.app/",
+      liveUrl: "",
       imageUrl: "/emergencias-dashboard.jpg", // Agrega screenshot del dashboard
       features: [
         "Mapa interactivo con geolocalización cada 30s",
@@ -22,9 +22,7 @@ const Projects = () => {
       ],
       metrics: "13,580+ líneas de código • 6 tablas de BD • Sistema en tiempo real",
       impact: "Sistema completo para coordinación de emergencias con tecnología moderna",
-      credentials: {
-        admin: { user: "admin@bomberos.com", pass: "admin123" }
-      }
+      deploymentNote: "El proyecto está desplegado con limitaciones debido al vencimiento de la cuenta gratuita de Railway. La funcionalidad completa puede verse en el código fuente."
     },
     {
       id: 2,
@@ -149,16 +147,11 @@ const Projects = () => {
                     </div>
                   )}
 
-                  {/* Credenciales de prueba */}
-                  {project.credentials && (
-                    <div className="mb-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-                      <h4 className="font-semibold text-primary mb-3">🔑 Credenciales de Prueba:</h4>
-                      <div className="bg-white p-4 rounded border max-w-sm">
-                        <p className="font-medium text-blue-600 mb-2">👨‍💼 Administrador</p>
-                        <p className="text-text-secondary mb-1">Email: <span className="font-mono bg-gray-100 px-2 py-1 rounded text-sm">{project.credentials.admin.user}</span></p>
-                        <p className="text-text-secondary">Contraseña: <span className="font-mono bg-gray-100 px-2 py-1 rounded text-sm">{project.credentials.admin.pass}</span></p>
-                      </div>
-                      <p className="text-xs text-text-secondary mt-3">💡 Acceso completo al sistema: crear alertas, gestionar usuarios, ver dashboard</p>
+                  {/* Nota de deployment */}
+                  {project.deploymentNote && (
+                    <div className="mb-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                      <h4 className="font-semibold text-primary mb-2">⚠️ Nota sobre el Deploy:</h4>
+                      <p className="text-text-secondary text-sm">{project.deploymentNote}</p>
                     </div>
                   )}
 
@@ -205,17 +198,19 @@ const Projects = () => {
                       </svg>
                       Ver Código
                     </a>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center"
-                    >
-                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      Ver Demo
-                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary inline-flex items-center"
+                      >
+                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Ver Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
