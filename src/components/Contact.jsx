@@ -138,13 +138,13 @@ const Contact = () => {
                 Envíame un email directamente y te responderé lo antes posible.
               </p>
               <a 
-                href="mailto:federico.gomez.sc@gmail.com?subject=Oportunidad Laboral"
-                className="btn-primary inline-flex items-center text-lg px-8 py-4"
+                href="mailto:federico.gomez.sc@gmail.com?subject=Oportunidad%20Laboral&body=Hola%20Federico,%0A%0AMe%20interesa%20conocer%20más%20sobre%20tu%20perfil%20profesional.%0A%0ASaludos"
+                className="bg-accent text-white px-8 py-4 rounded-lg font-medium hover:bg-accent/90 transition-colors duration-300 inline-flex items-center text-lg"
               >
                 <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Enviar Email
+                📧 Enviar Email
               </a>
             </div>
           </motion.div>
