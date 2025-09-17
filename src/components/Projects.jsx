@@ -10,7 +10,7 @@ const Projects = () => {
       description: "Sistema integral de gestión de emergencias en tiempo real para bomberos voluntarios. Una aplicación web completa que permite la coordinación de emergencias, geolocalización de operadores, gestión de puntos de interés y notificaciones en tiempo real para mejorar la respuesta ante emergencias.",
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
       githubUrl: "https://github.com/Fedecaff/mapa-emergencias",
-      liveUrl: "", // Demo temporalmente no disponible (Railway expirado)
+      liveUrl: "https://mapa-emergencias-git-main-federicos-projects-f9ae1da4.vercel.app/"
       imageUrl: "/emergencias-dashboard.jpg", // Agrega screenshot del dashboard
       features: [
         "Mapa interactivo con geolocalización cada 30s",
@@ -21,7 +21,10 @@ const Projects = () => {
         "Integración con servicios de mapas y geolocalización"
       ],
       metrics: "13,580+ líneas de código • 6 tablas de BD • Sistema en tiempo real",
-      impact: "Sistema completo para coordinación de emergencias con tecnología moderna"
+      impact: "Sistema completo para coordinación de emergencias con tecnología moderna",
+      credentials: {
+        admin: { user: "admin@bomberos.com", pass: "admin123" }
+      }
     },
     {
       id: 2,
@@ -143,6 +146,19 @@ const Projects = () => {
                     <div className="mb-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
                       <h4 className="font-semibold text-primary mb-2">🎯 Impacto Real:</h4>
                       <p className="text-text-secondary text-sm">{project.impact}</p>
+                    </div>
+                  )}
+
+                  {/* Credenciales de prueba */}
+                  {project.credentials && (
+                    <div className="mb-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                      <h4 className="font-semibold text-primary mb-3">🔑 Credenciales de Prueba:</h4>
+                      <div className="bg-white p-4 rounded border max-w-sm">
+                        <p className="font-medium text-blue-600 mb-2">👨‍💼 Administrador</p>
+                        <p className="text-text-secondary mb-1">Email: <span className="font-mono bg-gray-100 px-2 py-1 rounded text-sm">{project.credentials.admin.user}</span></p>
+                        <p className="text-text-secondary">Contraseña: <span className="font-mono bg-gray-100 px-2 py-1 rounded text-sm">{project.credentials.admin.pass}</span></p>
+                      </div>
+                      <p className="text-xs text-text-secondary mt-3">💡 Acceso completo al sistema: crear alertas, gestionar usuarios, ver dashboard</p>
                     </div>
                   )}
 

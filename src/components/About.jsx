@@ -25,21 +25,30 @@ const About = () => {
             >
               <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
                 <p>
-                  Soy un desarrollador web apasionado por crear soluciones digitales que combinan 
-                  funcionalidad y diseño elegante. Me especializo en el desarrollo full stack 
-                  con tecnologías modernas.
+                  <strong className="text-primary">Estudiante avanzado de la Tecnicatura en Desarrollo de Software</strong>, 
+                  con una sólida formación en Java y JavaScript. Me destaco por mi compromiso, responsabilidad 
+                  y capacidad para trabajar en equipo y bajo presión.
                 </p>
                 
                 <p>
-                  Mi enfoque se centra en escribir código limpio, mantenible y escalable, 
-                  siempre buscando las mejores prácticas y manteniendo la atención al detalle 
-                  en cada proyecto.
+                  Si bien aún me encuentro en proceso de formación, cuento con una fuerte motivación por 
+                  seguir aprendiendo mediante capacitaciones constantes, excelente presentismo y una actitud proactiva.
                 </p>
                 
                 <p>
-                  Estoy constantemente aprendiendo nuevas tecnologías y metodologías para 
-                  mantenerme actualizado en este campo en constante evolución.
+                  Mi perfil técnico se complementa con valores esenciales adquiridos como 
+                  <strong className="text-primary">miembro del cuerpo de Bomberos de la Policía Federal Argentina</strong>, 
+                  entre ellos la colaboración, la adaptabilidad y un marcado enfoque en la resolución de problemas.
                 </p>
+                
+                <div className="p-4 bg-accent/10 rounded-lg border-l-4 border-accent">
+                  <p className="font-medium text-primary mb-2">🚀 Disponibilidad Laboral</p>
+                  <p>
+                    Actualmente me encuentro en <strong>búsqueda de oportunidades laborales</strong> que me 
+                    permitan aplicar y potenciar mis conocimientos, con plena disposición para asumir nuevos 
+                    desafíos profesionales y priorizar mi desarrollo dentro del área de software.
+                  </p>
+                </div>
               </div>
               
               <motion.div 
@@ -111,3 +120,4 @@ const About = () => {
 }
 
 export default About
+

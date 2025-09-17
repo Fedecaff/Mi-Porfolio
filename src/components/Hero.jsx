@@ -10,15 +10,27 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mb-4"
+          >
+            <div className="text-6xl md:text-8xl font-bold text-primary mb-2 tracking-wider">
+              FGC
+            </div>
+            <div className="text-lg md:text-xl text-text-secondary font-medium">
+              Federico Gabriel Gomez Caffettaro
+            </div>
+          </motion.div>
+          
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Federico Gabriel
-            <br />
-            <span className="text-accent">Gomez Caffettaro</span>
+            <span className="text-accent">Portfolio</span>
           </motion.h1>
           
           <motion.p 
@@ -29,6 +41,16 @@ const Hero = () => {
           >
             Desarrollador Web Full Stack
           </motion.p>
+          
+          <motion.div
+            className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+            Disponible para nuevas oportunidades laborales
+          </motion.div>
           
           <motion.p 
             className="text-lg text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed"

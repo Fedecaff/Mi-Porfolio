@@ -23,7 +23,7 @@ const Contact = () => {
     console.log('Formulario enviado:', formData)
     
     // Crear mailto link como alternativa
-    const mailtoLink = `mailto:tu-email@ejemplo.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:federico.gomez.sc@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`
     )}`
     
@@ -51,7 +51,7 @@ const Contact = () => {
     },
     {
       name: 'Email',
-      url: 'mailto:tu-email@ejemplo.com', // Reemplaza con tu email
+      url: 'mailto:federico.gomez.sc@gmail.com',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -97,7 +97,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-gray-300">tu-email@ejemplo.com</p>
+                  <p className="text-gray-300">federico.gomez.sc@gmail.com</p>
                 </div>
               </div>
 
@@ -110,7 +110,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Ubicación</p>
-                  <p className="text-gray-300">Argentina</p>
+                  <p className="text-gray-300">Avenida Recalde 2868, San Fernando del Valle de Catamarca, Catamarca, Argentina</p>
                 </div>
               </div>
 
@@ -249,7 +249,7 @@ const Contact = () => {
           className="text-center mt-16 pt-8 border-t border-gray-600"
         >
           <p className="text-gray-300">
-            © 2024 Federico Gabriel Gomez Caffettaro. Todos los derechos reservados.
+            © 2025 FGC - Federico Gabriel Gomez Caffettaro. Todos los derechos reservados.
           </p>
           <p className="text-gray-400 text-sm mt-2">
             Desarrollado con React + Vite + Tailwind CSS
