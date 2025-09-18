@@ -37,7 +37,7 @@ const About = () => {
                 
                 <p>
                   Mi perfil técnico se complementa con valores esenciales adquiridos como 
-                  <strong className="text-primary">miembro del cuerpo de Bomberos de la Policía Federal Argentina</strong>, 
+                  <strong className="text-primary"> miembro del cuerpo de Bomberos de la Policía Federal Argentina</strong>, 
                   entre ellos la colaboración, la adaptabilidad y un marcado enfoque en la resolución de problemas.
                 </p>
                 
