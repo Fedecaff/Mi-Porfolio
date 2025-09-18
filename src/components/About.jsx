@@ -81,7 +81,7 @@ const About = () => {
                 {/* Foto profesional de Federico */}
                 <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-lg">
                   <img 
-                    src="/imagen/federico-foto.jpg" 
+                    src="/imagen/federico-foto.jpeg" 
                     alt="Federico Gabriel Gomez Caffettaro" 
                     className="w-full h-full object-cover"
                     onError={(e) => {
