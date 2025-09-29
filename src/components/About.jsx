@@ -92,18 +92,7 @@ const About = () => {
                   />
                   {/* Fallback si no se carga la imagen */}
                   <div className="w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl hidden items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-32 h-32 bg-accent/30 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <svg className="w-16 h-16 text-accent" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                        </svg>
-                      </div>
-                      <p className="text-text-secondary text-sm">
-                        Federico Gabriel
-                        <br />
-                        Gomez Caffettaro
-                      </p>
-                    </div>
+                    <p className="text-text-secondary text-sm text-center">Imagen no disponible</p>
                   </div>
                 </div>
                 

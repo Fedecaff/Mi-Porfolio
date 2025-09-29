@@ -6,7 +6,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "🚒 Sistema de Mapeo de Emergencias - Catamarca",
+      title: "Sistema de Mapeo de Emergencias - Catamarca",
       description: "Sistema integral de gestión de emergencias en tiempo real para bomberos voluntarios. Una aplicación web completa que permite la coordinación de emergencias, geolocalización de operadores, gestión de puntos de interés y notificaciones en tiempo real para mejorar la respuesta ante emergencias.",
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
       githubUrl: "https://github.com/Fedecaff/mapa-emergencias",
@@ -29,7 +29,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "💍 Invitación Digital de Boda - Federico & Georgina",
+      title: "Invitación Digital de Boda - Federico & Georgina",
       description: "Sitio web interactivo diseñado como invitación digital para una boda, desarrollado con HTML5, CSS3 y JavaScript vanilla. El proyecto presenta una experiencia inmersiva y elegante que combina funcionalidad moderna con un diseño romántico y sofisticado.",
       technologies: ["HTML5", "CSS3", "JavaScript ES6+", "Google Fonts", "CSS Grid", "Flexbox", "Media Queries"],
       githubUrl: "https://github.com/Fedecaff/Boda",
@@ -94,16 +94,9 @@ const Projects = () => {
                         }}
                       />
                       {/* Fallback si no se carga la imagen */}
-                      <div className="w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl hidden items-center justify-center">
-                        <div className="text-center">
-                          <svg className="w-16 h-16 text-accent/60 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
-                          <p className="text-text-secondary text-sm">
-                            Screenshot del proyecto
-                          </p>
-                        </div>
-                      </div>
+                  <div className="w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl hidden items-center justify-center">
+                    <p className="text-text-secondary text-sm">Imagen no disponible</p>
+                  </div>
                     </div>
                     
                     {/* Overlay con links */}
@@ -147,7 +140,7 @@ const Projects = () => {
                   {/* Métricas del proyecto */}
                   {project.metrics && (
                     <div className="mb-6 p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
-                      <h4 className="font-semibold text-primary mb-2">📊 Métricas del Proyecto:</h4>
+                      <h4 className="font-semibold text-primary mb-2">Métricas del Proyecto</h4>
                       <p className="text-text-secondary text-sm">{project.metrics}</p>
                     </div>
                   )}
@@ -155,7 +148,7 @@ const Projects = () => {
                   {/* Impacto */}
                   {project.impact && (
                     <div className="mb-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
-                      <h4 className="font-semibold text-primary mb-2">🎯 Impacto Real:</h4>
+                      <h4 className="font-semibold text-primary mb-2">Impacto</h4>
                       <p className="text-text-secondary text-sm">{project.impact}</p>
                     </div>
                   )}
@@ -163,7 +156,7 @@ const Projects = () => {
                   {/* Nota de deployment */}
                   {project.deploymentNote && (
                     <div className="mb-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
-                      <h4 className="font-semibold text-primary mb-2">⚠️ Nota sobre el Deploy:</h4>
+                      <h4 className="font-semibold text-primary mb-2">Nota sobre el Deploy</h4>
                       <p className="text-text-secondary text-sm">{project.deploymentNote}</p>
                     </div>
                   )}
@@ -171,7 +164,7 @@ const Projects = () => {
                   {/* Credenciales de prueba */}
                   {project.credentials && (
                     <div className="mb-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-                      <h4 className="font-semibold text-primary mb-3">🔑 Credenciales de Prueba:</h4>
+                      <h4 className="font-semibold text-primary mb-3">Credenciales de Prueba</h4>
                       <div className="bg-white p-4 rounded border max-w-sm">
                         <p className="font-medium text-blue-600 mb-2">👨‍💼 Administrador</p>
                         <p className="text-text-secondary mb-1">Email: <span className="font-mono bg-gray-100 px-2 py-1 rounded text-sm">{project.credentials.admin.user}</span></p>
@@ -183,7 +176,7 @@ const Projects = () => {
 
                   {/* Características principales */}
                   <div className="mb-6">
-                    <h4 className="font-semibold text-primary mb-3">Características principales:</h4>
+                    <h4 className="font-semibold text-primary mb-3">Características principales</h4>
                     <ul className="grid grid-cols-1 gap-2">
                       {project.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-text-secondary">
