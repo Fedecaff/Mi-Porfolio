@@ -42,7 +42,7 @@ const About = () => {
                 </p>
                 
                 <div className="p-4 bg-accent/10 rounded-lg border-l-4 border-accent">
-                  <p className="font-medium text-primary mb-2">🚀 Disponibilidad Laboral</p>
+                  <p className="font-medium text-primary mb-2">Disponibilidad Laboral</p>
                   <p>
                     Actualmente me encuentro en <strong>búsqueda de oportunidades laborales</strong> que me 
                     permitan aplicar y potenciar mis conocimientos, con plena disposición para asumir nuevos 

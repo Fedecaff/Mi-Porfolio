@@ -72,9 +72,12 @@ const Contact = () => {
               <p className="text-gray-300 mb-4">
                 Contáctame directamente:
               </p>
-              <p className="text-accent text-xl font-semibold">
+              <a 
+                href="mailto:federico.gomez.sc@gmail.com"
+                className="text-accent text-xl font-semibold hover:underline inline-block"
+              >
                 📧 federico.gomez.sc@gmail.com
-              </p>
+              </a>
             </div>
           </motion.div>
         </div>
