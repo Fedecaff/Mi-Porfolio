@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false)
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('federico.gomez.sc@gmail.com')
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
 
   return (
     <section id="contact" className="py-20 bg-primary text-white">
@@ -72,12 +79,18 @@ const Contact = () => {
               <p className="text-gray-300 mb-4">
                 Contáctame directamente:
               </p>
-              <a 
-                href="mailto:federico.gomez.sc@gmail.com"
-                className="text-accent text-xl font-semibold hover:underline inline-block"
+              <button 
+                onClick={copyEmail}
+                className="text-accent text-xl font-semibold hover:underline inline-block cursor-pointer transition-all duration-200"
+                title="Haz clic para copiar el email"
               >
-                📧 federico.gomez.sc@gmail.com
-              </a>
+                📧 {copied ? '¡Copiado al portapapeles!' : 'federico.gomez.sc@gmail.com'}
+              </button>
+              {copied && (
+                <p className="text-green-400 text-sm mt-3">
+                  ✓ Email copiado. Ahora puedes pegarlo en tu cliente de correo.
+                </p>
+              )}
             </div>
           </motion.div>
         </div>
@@ -91,7 +104,7 @@ const Contact = () => {
           className="text-center mt-16 pt-8 border-t border-gray-600"
         >
           <p className="text-gray-300">
-            © 2025 FGC - Federico Gabriel Gomez Caffettaro. Todos los derechos reservados.
+            © 2025 FGC - Federico Gabriel Gomez Caffettaro
           </p>
           <p className="text-gray-400 text-sm mt-2">
             Desarrollado con React + Vite + Tailwind CSS
