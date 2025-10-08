@@ -6,6 +6,25 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "CRUD Fullstack - Sistema de Mapeo (Demo Educativa)",
+      description: "Demo educativa que demuestra conocimientos fullstack a través de un sistema de gestión de puntos de emergencia. Implementa CRUD completo con 3 tablas relacionadas, API REST, mapa interactivo con Leaflet, y arquitectura Node.js + Express + PostgreSQL. Proyecto creado para evidenciar comprensión de integración frontend-backend-base de datos en un caso práctico funcional.",
+      technologies: ["Node.js", "Express", "PostgreSQL", "JavaScript ES6+", "HTML5", "CSS3", "Bootstrap 5", "Leaflet.js", "Font Awesome"],
+      githubUrl: "https://github.com/Fedecaff/crud-mapeo-emergencias",
+      imageUrl: "/imagen/captura CRUD mapeo.png",
+      features: [
+        "CRUD completo para 3 tablas relacionadas (usuarios, categorías, puntos)",
+        "API REST con endpoints para consultas especiales y estadísticas",
+        "Mapa interactivo con marcadores personalizados por categoría",
+        "Sistema de gestión de usuarios con roles (administrador/operador)",
+        "Dashboard con estadísticas en tiempo real",
+        "Interfaz responsive con formularios validados"
+      ],
+      metrics: "Proyecto educativo Full Stack • 3 tablas relacionadas • API REST completa",
+      impact: "Desarrollado para consolidar conocimientos en arquitectura de aplicaciones web completas y manejo integral de bases de datos relacionales",
+      deploymentNote: "Proyecto local que requiere PostgreSQL. Código completo disponible en GitHub para revisión."
+    },
+    {
+      id: 2,
       title: "Sistema de Mapeo de Emergencias - Catamarca",
       description: "Sistema integral de gestión de emergencias en tiempo real para bomberos voluntarios. Una aplicación web completa que permite la coordinación de emergencias, geolocalización de operadores, gestión de puntos de interés y notificaciones en tiempo real para mejorar la respuesta ante emergencias.",
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
@@ -28,7 +47,7 @@ const Projects = () => {
       }
     },
     {
-      id: 2,
+      id: 3,
       title: "Invitación Digital de Boda - Federico & Georgina",
       description: "Sitio web interactivo diseñado como invitación digital para una boda, desarrollado con HTML5, CSS3 y JavaScript vanilla. El proyecto presenta una experiencia inmersiva y elegante que combina funcionalidad moderna con un diseño romántico y sofisticado.",
       technologies: ["HTML5", "CSS3", "JavaScript ES6+", "Google Fonts", "CSS Grid", "Flexbox", "Media Queries"],
