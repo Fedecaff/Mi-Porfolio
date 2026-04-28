@@ -25,20 +25,15 @@ const About = () => {
             >
               <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
                 <p>
-                  <strong className="text-primary">Estudiante avanzado de la Tecnicatura en Desarrollo de Software</strong>, 
-                  con una sólida formación en Java y JavaScript. Me destaco por mi compromiso, responsabilidad 
-                  y capacidad para trabajar en equipo y bajo presión.
+                  Actualmente desarrollo aplicaciones web con JavaScript, creando interfaces interactivas y lógica de negocio para proyectos funcionales. Trabajo con frontend y backend en implementaciones Full Stack, integrando formularios, APIs REST y bases de datos relacionales.
                 </p>
                 
                 <p>
-                  Si bien aún me encuentro en proceso de formación, cuento con una fuerte motivación por 
-                  seguir aprendiendo mediante capacitaciones constantes, excelente presentismo y una actitud proactiva.
+                  En esta etapa estoy fortaleciendo mis conocimientos en arquitectura de aplicaciones web, buenas prácticas de código y desarrollo de sistemas más complejos orientados a casos reales.
                 </p>
                 
                 <p>
-                  Mi perfil técnico se complementa con valores esenciales adquiridos como 
-                  <strong className="text-primary"> miembro del cuerpo de Bomberos de la Policía Federal Argentina</strong>, 
-                  entre ellos la colaboración, la adaptabilidad y un marcado enfoque en la resolución de problemas.
+                  Me encuentro en búsqueda de oportunidades laborales en empresas donde pueda aportar soluciones concretas, seguir creciendo profesionalmente y sumar valor en equipos de desarrollo.
                 </p>
                 
                 <div className="p-4 bg-accent/10 rounded-lg border-l-4 border-accent">
@@ -62,10 +57,7 @@ const About = () => {
                   href="#contact" 
                   className="btn-primary inline-flex items-center"
                 >
-                  Trabajemos Juntos
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  Contacto profesional
                 </a>
               </motion.div>
             </motion.div>

@@ -19,6 +19,12 @@ const Projects = () => {
         "Dashboard con estadísticas en tiempo real",
         "Interfaz responsive con formularios validados"
       ],
+      problemSolved: "Centralizar la gestión de puntos de emergencia en un sistema único para registrar, consultar y mantener datos operativos de forma ordenada.",
+      learnings: [
+        "Modelado y relación de tablas en PostgreSQL para casos reales",
+        "Diseño de API REST con separación entre rutas, controladores y consultas",
+        "Integración entre mapa interactivo y datos persistidos en base de datos"
+      ],
       metrics: "Proyecto educativo Full Stack • 3 tablas relacionadas • API REST completa",
       impact: "Desarrollado para consolidar conocimientos en arquitectura de aplicaciones web completas y manejo integral de bases de datos relacionales",
       deploymentNote: "Proyecto local que requiere PostgreSQL. Código completo disponible en GitHub para revisión."
@@ -39,6 +45,12 @@ const Projects = () => {
         "Panel administrativo con roles",
         "Integración con servicios de mapas y geolocalización"
       ],
+      problemSolved: "Mejorar la coordinación de emergencias con visibilidad en tiempo real de operadores, alertas y puntos críticos en una sola plataforma.",
+      learnings: [
+        "Implementación de comunicación en tiempo real con Socket.IO",
+        "Manejo de estados y eventos para paneles operativos en vivo",
+        "Despliegue de un proyecto full stack con servicios cloud gratuitos"
+      ],
       metrics: "13,580+ líneas de código • 6 tablas de BD • Sistema en tiempo real",
       impact: "Sistema completo para coordinación de emergencias con tecnología moderna",
       deploymentNote: "El proyecto está desplegado con limitaciones debido al vencimiento de la cuenta gratuita de Railway. La funcionalidad completa puede verse en el código fuente.",
@@ -48,11 +60,11 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Invitación Digital de Boda - Federico & Georgina",
-      description: "Sitio web interactivo diseñado como invitación digital para una boda, desarrollado con HTML5, CSS3 y JavaScript vanilla. El proyecto presenta una experiencia inmersiva y elegante que combina funcionalidad moderna con un diseño romántico y sofisticado.",
+      title: "Invitación Digital de Boda - Félix & Susana",
+      description: "Sitio web interactivo reutilizable para invitaciones digitales de boda, adaptado para nuevos novios y eventos. Desarrollado con HTML5, CSS3 y JavaScript vanilla, ofrece una experiencia elegante y personalizada con secciones dinámicas, cuenta regresiva y contenido multimedia.",
       technologies: ["HTML5", "CSS3", "JavaScript ES6+", "Google Fonts", "CSS Grid", "Flexbox", "Media Queries"],
       githubUrl: "https://github.com/Fedecaff/Boda",
-      liveUrl: "https://boda-fede-geor.netlify.app/",
+      liveUrl: "https://boda-antuco-susi.netlify.app/",
       imageUrl: "/imagen/captura pro boda.png",
       features: [
         "Diseño responsivo adaptable a todos los dispositivos",
@@ -61,6 +73,12 @@ const Projects = () => {
         "Reproductor de audio con controles personalizados",
         "Modal interactivo para información adicional",
         "Animaciones CSS y efectos visuales elegantes"
+      ],
+      problemSolved: "Reemplazar invitaciones tradicionales por una experiencia digital accesible, personalizable y fácil de compartir para los invitados.",
+      learnings: [
+        "Organización de una landing interactiva con JavaScript vanilla",
+        "Uso de componentes visuales para mejorar narrativa y experiencia",
+        "Adaptación de una misma base de proyecto para distintos clientes"
       ],
       metrics: "Desarrollo frontend completo • Diseño mobile-first • UX/UI personalizada",
       impact: "Experiencia web memorable que combina funcionalidad moderna con diseño romántico"
@@ -169,6 +187,28 @@ const Projects = () => {
                     <div className="mb-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
                       <h4 className="font-semibold text-primary mb-2">Impacto</h4>
                       <p className="text-text-secondary text-sm">{project.impact}</p>
+                    </div>
+                  )}
+
+                  {/* Problema que resuelve */}
+                  {project.problemSolved && (
+                    <div className="mb-6 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
+                      <h4 className="font-semibold text-primary mb-2">Problema que resuelve</h4>
+                      <p className="text-text-secondary text-sm">{project.problemSolved}</p>
+                    </div>
+                  )}
+
+                  {/* Aprendizajes */}
+                  {project.learnings && project.learnings.length > 0 && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-primary mb-3">Aprendizajes clave</h4>
+                      <ul className="grid grid-cols-1 gap-2">
+                        {project.learnings.map((learning, learningIndex) => (
+                          <li key={learningIndex} className="text-text-secondary text-sm">
+                            - {learning}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   )}
 

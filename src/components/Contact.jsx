@@ -21,10 +21,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Trabajemos Juntos
+            Contacto Profesional
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            ¿Tienes un proyecto en mente? Me encantaría conocer más sobre tu idea y cómo puedo ayudarte a hacerla realidad.
+            Estoy disponible para procesos de selección en empresas que busquen un perfil Full Stack en crecimiento, con foco en JavaScript y desarrollo de aplicaciones web.
           </p>
         </motion.div>
 
@@ -40,7 +40,7 @@ const Contact = () => {
             
             <div className="space-y-6 mb-8">
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 text-white font-semibold">@</div>
+                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 text-white font-semibold">EM</div>
                 <div>
                   <p className="font-medium">Email</p>
                   <p className="text-gray-300">federico.gomez.sc@gmail.com</p>
@@ -48,7 +48,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 text-white font-semibold">📍</div>
+                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 text-white font-semibold">UB</div>
                 <div>
                   <p className="font-medium">Ubicación</p>
                   <p className="text-gray-300">Avenida Recalde 2868, San Fernando del Valle de Catamarca, Catamarca, Argentina</p>
@@ -56,10 +56,10 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 text-white font-semibold">✓</div>
+                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 text-white font-semibold">DL</div>
                 <div>
                   <p className="font-medium">Disponibilidad</p>
-                  <p className="text-gray-300">Disponible para proyectos</p>
+                  <p className="text-gray-300">Disponible para incorporación laboral</p>
                 </div>
               </div>
             </div>
@@ -75,20 +75,20 @@ const Contact = () => {
             className="text-center"
           >
             <div className="bg-secondary/50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-4">¿Interesado en trabajar juntos?</h3>
+              <h3 className="text-2xl font-bold mb-4">Interés en perfil profesional</h3>
               <p className="text-gray-300 mb-4">
-                Contáctame directamente:
+                Contacto directo por email:
               </p>
               <button 
                 onClick={copyEmail}
                 className="text-accent text-xl font-semibold hover:underline inline-block cursor-pointer transition-all duration-200"
                 title="Haz clic para copiar el email"
               >
-                📧 {copied ? '¡Copiado al portapapeles!' : 'federico.gomez.sc@gmail.com'}
+                {copied ? 'Copiado al portapapeles' : 'federico.gomez.sc@gmail.com'}
               </button>
               {copied && (
                 <p className="text-green-400 text-sm mt-3">
-                  ✓ Email copiado. Ahora puedes pegarlo en tu cliente de correo.
+                  Email copiado. Ahora puedes pegarlo en tu cliente de correo.
                 </p>
               )}
             </div>

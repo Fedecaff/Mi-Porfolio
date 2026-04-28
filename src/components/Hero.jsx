@@ -27,7 +27,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Desarrollador Web Full Stack
+            Desarrollador Full Stack en formación, enfocado en JavaScript y en la creación de aplicaciones web interactivas.
           </motion.p>
           
           <motion.div
@@ -46,7 +46,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Creando experiencias digitales modernas con código limpio y diseño funcional
+            Construyo soluciones funcionales con código limpio, interfaces claras y enfoque en experiencia de usuario.
           </motion.p>
           
           <motion.div
@@ -59,10 +59,7 @@ const Hero = () => {
               href="#projects" 
               className="btn-primary inline-flex items-center justify-center"
             >
-              Ver Proyectos
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
+              Ver proyectos
             </a>
             
             <a 
