@@ -6,6 +6,31 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Sabores de mi Tierra — Sistema de Gestión para Rotisería",
+      description: "Plataforma integral para gestionar ventas, clientes, viandas y cocina en una rotisería. Centraliza operaciones diarias, reduce errores manuales y mejora la trazabilidad del servicio. Diseñada para un entorno real con flujo de caja rápido y múltiples tipos de pedidos.",
+      technologies: ["Node.js", "Express", "PostgreSQL", "React", "Vite", "JWT", "Axios"],
+      githubUrl: "https://github.com/Fedecaff/sabores-de-mi-tierra-",
+      imageUrl: "/imagen/captura-sabores-mi-tierra.png",
+      features: [
+        "Ventas de mostrador con ticket de cocina y ticket de venta",
+        "Gestión de planes de vianda con pagos y retiros diarios",
+        "Módulo de pedidos de cocina unificado (mostrador + viandas)",
+        "Promociones automáticas con cálculo de precio",
+        "CRUD de productos, categorías y clientes",
+        "Reportes operativos de ventas y viandas"
+      ],
+      problemSolved: "Resuelve la falta de control en el flujo diario de ventas y viandas, ofreciendo un sistema unificado que registra pedidos, pagos, tickets de cocina y retiros, evitando confusiones operativas y mejorando la atención al cliente.",
+      learnings: [
+        "Diseño de flujos operativos reales y validaciones de negocio",
+        "Integración frontend/backend con autenticación y roles",
+        "Organización modular de servicios y controladores para escalabilidad"
+      ],
+      metrics: "Sistema de gestión integral • Operación diaria unificada • Enfoque en trazabilidad",
+      impact: "Permite ordenar la operación de rotisería en un único sistema y mejorar tiempos de atención en escenarios de alta demanda",
+      deploymentNote: "Proyecto preparado para entorno real con PostgreSQL y documentación de API disponible en el repositorio."
+    },
+    {
+      id: 2,
       title: "CRUD Fullstack - Sistema de Mapeo (Demo Educativa)",
       description: "Demo educativa que demuestra conocimientos fullstack a través de un sistema de gestión de puntos de emergencia. Implementa CRUD completo con 3 tablas relacionadas, API REST, mapa interactivo con Leaflet, y arquitectura Node.js + Express + PostgreSQL. Proyecto creado para evidenciar comprensión de integración frontend-backend-base de datos en un caso práctico funcional.",
       technologies: ["Node.js", "Express", "PostgreSQL", "JavaScript ES6+", "HTML5", "CSS3", "Bootstrap 5", "Leaflet.js", "Font Awesome"],
@@ -30,7 +55,7 @@ const Projects = () => {
       deploymentNote: "Proyecto local que requiere PostgreSQL. Código completo disponible en GitHub para revisión."
     },
     {
-      id: 2,
+      id: 3,
       title: "Sistema de Mapeo de Emergencias - Catamarca",
       description: "Sistema integral de gestión de emergencias en tiempo real para bomberos voluntarios. Una aplicación web completa que permite la coordinación de emergencias, geolocalización de operadores, gestión de puntos de interés y notificaciones en tiempo real para mejorar la respuesta ante emergencias.",
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
@@ -59,7 +84,7 @@ const Projects = () => {
       }
     },
     {
-      id: 3,
+      id: 4,
       title: "Invitación Digital de Boda - Félix & Susana",
       description: "Sitio web interactivo reutilizable para invitaciones digitales de boda, adaptado para nuevos novios y eventos. Desarrollado con HTML5, CSS3 y JavaScript vanilla, ofrece una experiencia elegante y personalizada con secciones dinámicas, cuenta regresiva y contenido multimedia.",
       technologies: ["HTML5", "CSS3", "JavaScript ES6+", "Google Fonts", "CSS Grid", "Flexbox", "Media Queries"],
