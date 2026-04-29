@@ -25,6 +25,12 @@ const Projects = () => {
         "Integración frontend/backend con autenticación y roles",
         "Organización modular de servicios y controladores para escalabilidad"
       ],
+      technicalDecisions: [
+        "Separación en capas (rutas, controladores y servicios) para facilitar mantenimiento y crecimiento del sistema",
+        "Autenticación con JWT para mantener sesiones stateless y simplificar la protección de endpoints",
+        "PostgreSQL por su fortaleza en relaciones entre entidades operativas como clientes, ventas y viandas",
+        "Centralización de la lógica de pedidos para unificar el flujo entre caja y cocina y evitar inconsistencias"
+      ],
       metrics: "Sistema de gestión integral • Operación diaria unificada • Enfoque en trazabilidad",
       impact: "Permite ordenar la operación de rotisería en un único sistema y mejorar tiempos de atención en escenarios de alta demanda",
       deploymentNote: "Proyecto preparado para entorno real con PostgreSQL y documentación de API disponible en el repositorio."
@@ -49,6 +55,11 @@ const Projects = () => {
         "Modelado y relación de tablas en PostgreSQL para casos reales",
         "Diseño de API REST con separación entre rutas, controladores y consultas",
         "Integración entre mapa interactivo y datos persistidos en base de datos"
+      ],
+      technicalDecisions: [
+        "Modelo relacional de 3 tablas para preservar integridad de datos entre usuarios, categorías y puntos",
+        "Diseño REST para desacoplar frontend y backend y facilitar pruebas por endpoint",
+        "Uso de Leaflet para representar datos geográficos con marcadores por categoría de forma escalable"
       ],
       metrics: "Proyecto educativo Full Stack • 3 tablas relacionadas • API REST completa",
       impact: "Desarrollado para consolidar conocimientos en arquitectura de aplicaciones web completas y manejo integral de bases de datos relacionales",
@@ -75,6 +86,11 @@ const Projects = () => {
         "Implementación de comunicación en tiempo real con Socket.IO",
         "Manejo de estados y eventos para paneles operativos en vivo",
         "Despliegue de un proyecto full stack con servicios cloud gratuitos"
+      ],
+      technicalDecisions: [
+        "Socket.IO para sincronizar operadores y alertas en tiempo real sin refresco manual",
+        "Control de acceso por roles para separar operaciones administrativas de uso operativo",
+        "Persistencia en PostgreSQL para auditar eventos y mantener trazabilidad de la operación"
       ],
       metrics: "13,580+ líneas de código • 6 tablas de BD • Sistema en tiempo real",
       impact: "Sistema completo para coordinación de emergencias con tecnología moderna",
@@ -104,6 +120,11 @@ const Projects = () => {
         "Organización de una landing interactiva con JavaScript vanilla",
         "Uso de componentes visuales para mejorar narrativa y experiencia",
         "Adaptación de una misma base de proyecto para distintos clientes"
+      ],
+      technicalDecisions: [
+        "Arquitectura frontend simple con JavaScript vanilla para facilitar personalización por evento",
+        "Diseño responsive mobile-first para asegurar experiencia consistente en dispositivos móviles",
+        "Estructura reutilizable de secciones para reducir tiempos de adaptación a nuevos clientes"
       ],
       metrics: "Desarrollo frontend completo • Diseño mobile-first • UX/UI personalizada",
       impact: "Experiencia web memorable que combina funcionalidad moderna con diseño romántico"
@@ -267,6 +288,19 @@ const Projects = () => {
                           ))}
                         </ul>
                       </div>
+
+                      {project.technicalDecisions && project.technicalDecisions.length > 0 && (
+                        <div>
+                          <h4 className="font-semibold text-primary mb-3">Decisiones técnicas</h4>
+                          <ul className="grid grid-cols-1 gap-2">
+                            {project.technicalDecisions.map((decision, decisionIndex) => (
+                              <li key={decisionIndex} className="text-text-secondary text-sm">
+                                - {decision}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
 
                       {project.metrics && (
                         <div className="p-4 bg-accent/5 rounded-lg border-l-4 border-accent">

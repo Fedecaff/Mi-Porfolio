@@ -27,7 +27,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Desarrollador Full Stack en formación, enfocado en JavaScript y en la creación de aplicaciones web interactivas.
+            Desarrollador Full Stack Junior
           </motion.p>
           
           <motion.div
@@ -46,7 +46,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Construyo soluciones funcionales con código limpio, interfaces claras y enfoque en experiencia de usuario.
+            Construyo aplicaciones web con JavaScript, React y Node.js, enfocadas en lógica de negocio y manejo de datos. Busco mi primera experiencia profesional para trabajar en equipo y desarrollar soluciones reales.
           </motion.p>
           
           <motion.div

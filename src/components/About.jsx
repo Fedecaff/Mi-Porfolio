@@ -25,23 +25,21 @@ const About = () => {
             >
               <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
                 <p>
-                  Actualmente desarrollo aplicaciones web con JavaScript, creando interfaces interactivas y lógica de negocio para proyectos funcionales. Trabajo con frontend y backend en implementaciones Full Stack, integrando formularios, APIs REST y bases de datos relacionales.
+                  Soy desarrollador web en formación, enfocado en JavaScript, React y Node.js.
                 </p>
                 
                 <p>
-                  En esta etapa estoy fortaleciendo mis conocimientos en arquitectura de aplicaciones web, buenas prácticas de código y desarrollo de sistemas más complejos orientados a casos reales.
+                  Desarrollo aplicaciones con lógica de negocio, manejo de datos e integración entre frontend y backend, priorizando claridad en el código y organización de funcionalidades.
                 </p>
                 
                 <p>
-                  Me encuentro en búsqueda de oportunidades laborales en empresas donde pueda aportar soluciones concretas, seguir creciendo profesionalmente y sumar valor en equipos de desarrollo.
+                  Busco mi primera experiencia profesional en empresa para aportar valor en equipo y seguir creciendo con proyectos reales.
                 </p>
                 
                 <div className="p-4 bg-accent/10 rounded-lg border-l-4 border-accent">
                   <p className="font-medium text-primary mb-2">Disponibilidad Laboral</p>
                   <p>
-                    Actualmente me encuentro en <strong>búsqueda de oportunidades laborales</strong> que me 
-                    permitan aplicar y potenciar mis conocimientos, con plena disposición para asumir nuevos 
-                    desafíos profesionales y priorizar mi desarrollo dentro del área de software.
+                    Actualmente me desempeño en el cuerpo de bomberos de la <strong>Policía Federal Argentina (PFA)</strong> en el aeropuerto, desarrollando habilidades de trabajo bajo presión, responsabilidad y toma de decisiones. En paralelo, me encuentro en búsqueda de mi primera oportunidad en el área de desarrollo de software, con disponibilidad y compromiso para crecer profesionalmente en el sector.
                   </p>
                 </div>
               </div>
