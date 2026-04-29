@@ -41,16 +41,14 @@ const Contact = () => {
 
     setSubmitStatus('sending')
 
-    const body = new URLSearchParams({
-      'form-name': 'contacto-profesional',
-      ...formData
-    }).toString()
+    const form = e.currentTarget
+    const formData = new FormData(form)
 
     try {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body
+        body: new URLSearchParams(formData).toString()
       })
 
       if (!response.ok) throw new Error('Error en envío')
@@ -166,6 +164,7 @@ const Contact = () => {
                 id="contact-form"
                 name="contacto-profesional"
                 method="POST"
+                action="/"
                 data-netlify="true"
                 onSubmit={handleSubmit}
                 className="space-y-4 text-left"

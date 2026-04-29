@@ -9,7 +9,9 @@
   </head>
   <body>
     <div id="root"></div>
-    <form name="contacto-profesional" data-netlify="true" netlify hidden>
+    <!-- Formulario estático para que Netlify detecte el form en el build (SPA + React) -->
+    <form name="contacto-profesional" method="POST" data-netlify="true" action="/" hidden>
+      <input type="hidden" name="form-name" value="contacto-profesional" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
