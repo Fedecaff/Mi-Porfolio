@@ -138,13 +138,11 @@ const Projects = () => {
               viewport={{ once: true }}
               className="card p-8 lg:p-10"
             >
-              <div className={`grid lg:grid-cols-2 gap-8 items-center ${
-                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-              }`}>
+              <div className="flex flex-col gap-8">
                 {/* Imagen del proyecto */}
-                <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div className="relative group">
-                    <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                <div>
+                  <div className="relative group max-w-3xl mx-auto">
+                    <div className="aspect-[16/7] rounded-xl overflow-hidden shadow-lg">
                       <img 
                         src={project.imageUrl} 
                         alt={`Screenshot de ${project.title}`}
@@ -190,7 +188,7 @@ const Projects = () => {
                 </div>
 
                 {/* Contenido del proyecto */}
-                <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-primary mb-4">
                     {project.title}
                   </h3>
@@ -199,22 +197,6 @@ const Projects = () => {
                     {project.description}
                   </p>
 
-                  {/* Métricas del proyecto */}
-                  {project.metrics && (
-                    <div className="mb-6 p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
-                      <h4 className="font-semibold text-primary mb-2">Métricas del Proyecto</h4>
-                      <p className="text-text-secondary text-sm">{project.metrics}</p>
-                    </div>
-                  )}
-
-                  {/* Impacto */}
-                  {project.impact && (
-                    <div className="mb-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
-                      <h4 className="font-semibold text-primary mb-2">Impacto</h4>
-                      <p className="text-text-secondary text-sm">{project.impact}</p>
-                    </div>
-                  )}
-
                   {/* Problema que resuelve */}
                   {project.problemSolved && (
                     <div className="mb-6 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
@@ -222,56 +204,6 @@ const Projects = () => {
                       <p className="text-text-secondary text-sm">{project.problemSolved}</p>
                     </div>
                   )}
-
-                  {/* Aprendizajes */}
-                  {project.learnings && project.learnings.length > 0 && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-primary mb-3">Aprendizajes clave</h4>
-                      <ul className="grid grid-cols-1 gap-2">
-                        {project.learnings.map((learning, learningIndex) => (
-                          <li key={learningIndex} className="text-text-secondary text-sm">
-                            - {learning}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {/* Nota de deployment */}
-                  {project.deploymentNote && (
-                    <div className="mb-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
-                      <h4 className="font-semibold text-primary mb-2">Nota sobre el Deploy</h4>
-                      <p className="text-text-secondary text-sm">{project.deploymentNote}</p>
-                    </div>
-                  )}
-
-                  {/* Credenciales de prueba */}
-                  {project.credentials && (
-                    <div className="mb-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-                      <h4 className="font-semibold text-primary mb-3">Credenciales de Prueba</h4>
-                      <div className="bg-white p-4 rounded border max-w-sm">
-                        <p className="font-medium text-blue-600 mb-2">Administrador</p>
-                        <p className="text-text-secondary mb-1">Email: <span className="font-mono bg-gray-100 px-2 py-1 rounded text-sm">{project.credentials.admin.user}</span></p>
-                        <p className="text-text-secondary">Contraseña: <span className="font-mono bg-gray-100 px-2 py-1 rounded text-sm">{project.credentials.admin.pass}</span></p>
-                      </div>
-                      <p className="text-xs text-text-secondary mt-3">Algunas funcionalidades pueden tener limitaciones por la migración de Railway a Vercel</p>
-                    </div>
-                  )}
-
-                  {/* Características principales */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-primary mb-3">Características principales</h4>
-                    <ul className="grid grid-cols-1 gap-2">
-                      {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-text-secondary">
-                          <svg className="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
 
                   {/* Tecnologías */}
                   <div className="mb-6">
@@ -315,6 +247,74 @@ const Projects = () => {
                       </a>
                     )}
                   </div>
+
+                  {/* Detalle técnico desplegable */}
+                  <details className="mt-6 border border-accent/20 rounded-lg p-4">
+                    <summary className="cursor-pointer font-semibold text-primary">
+                      Ver detalle técnico
+                    </summary>
+                    <div className="mt-4 space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-primary mb-3">Características principales</h4>
+                        <ul className="grid grid-cols-1 gap-2">
+                          {project.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center text-text-secondary">
+                              <svg className="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {project.metrics && (
+                        <div className="p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
+                          <h4 className="font-semibold text-primary mb-2">Métricas del Proyecto</h4>
+                          <p className="text-text-secondary text-sm">{project.metrics}</p>
+                        </div>
+                      )}
+
+                      {project.impact && (
+                        <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                          <h4 className="font-semibold text-primary mb-2">Impacto</h4>
+                          <p className="text-text-secondary text-sm">{project.impact}</p>
+                        </div>
+                      )}
+
+                      {project.learnings && project.learnings.length > 0 && (
+                        <div>
+                          <h4 className="font-semibold text-primary mb-3">Aprendizajes clave</h4>
+                          <ul className="grid grid-cols-1 gap-2">
+                            {project.learnings.map((learning, learningIndex) => (
+                              <li key={learningIndex} className="text-text-secondary text-sm">
+                                - {learning}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {project.deploymentNote && (
+                        <div className="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                          <h4 className="font-semibold text-primary mb-2">Nota sobre el Deploy</h4>
+                          <p className="text-text-secondary text-sm">{project.deploymentNote}</p>
+                        </div>
+                      )}
+
+                      {project.credentials && (
+                        <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                          <h4 className="font-semibold text-primary mb-3">Credenciales de Prueba</h4>
+                          <div className="bg-white p-4 rounded border max-w-sm">
+                            <p className="font-medium text-blue-600 mb-2">Administrador</p>
+                            <p className="text-text-secondary mb-1">Email: <span className="font-mono bg-gray-100 px-2 py-1 rounded text-sm">{project.credentials.admin.user}</span></p>
+                            <p className="text-text-secondary">Contraseña: <span className="font-mono bg-gray-100 px-2 py-1 rounded text-sm">{project.credentials.admin.pass}</span></p>
+                          </div>
+                          <p className="text-xs text-text-secondary mt-3">Algunas funcionalidades pueden tener limitaciones por la migración de Railway a Vercel</p>
+                        </div>
+                      )}
+                    </div>
+                  </details>
                 </div>
               </div>
             </motion.div>

@@ -5,6 +5,9 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend",
+      colorClasses: "bg-blue-50 border-blue-200",
+      titleClasses: "text-blue-700",
+      skillClasses: "bg-blue-100 border-blue-200 text-blue-800",
       description: "Construcción de interfaces y experiencias web interactivas.",
       skills: [
         "HTML5",
@@ -17,6 +20,9 @@ const Skills = () => {
     },
     {
       title: "Lógica",
+      colorClasses: "bg-purple-50 border-purple-200",
+      titleClasses: "text-purple-700",
+      skillClasses: "bg-purple-100 border-purple-200 text-purple-800",
       description: "Resolución de problemas y estructura de funcionalidades.",
       skills: [
         "Manipulación del DOM",
@@ -29,6 +35,9 @@ const Skills = () => {
     },
     {
       title: "Herramientas",
+      colorClasses: "bg-emerald-50 border-emerald-200",
+      titleClasses: "text-emerald-700",
+      skillClasses: "bg-emerald-100 border-emerald-200 text-emerald-800",
       description: "Flujo de trabajo y despliegue de proyectos.",
       skills: [
         "Git",
@@ -67,9 +76,9 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
               viewport={{ once: true }}
-              className="card p-6"
+              className={`card p-6 border-2 ${category.colorClasses}`}
             >
-              <h3 className="text-2xl font-bold text-primary mb-6 text-center">
+              <h3 className={`text-2xl font-bold mb-6 text-center ${category.titleClasses}`}>
                 {category.title}
               </h3>
               <p className="text-text-secondary text-sm text-center mb-6">
@@ -87,9 +96,9 @@ const Skills = () => {
                       delay: categoryIndex * 0.2 + skillIndex * 0.1 
                     }}
                     viewport={{ once: true }}
-                    className="px-3 py-2 bg-accent/5 rounded-lg border border-accent/10"
+                    className={`px-3 py-2 rounded-lg border font-medium ${category.skillClasses}`}
                   >
-                    <span className="font-medium text-primary">{skill}</span>
+                    <span>{skill}</span>
                   </motion.div>
                 ))}
               </div>

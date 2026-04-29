@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-bg-white to-bg-light">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-bg-white to-bg-light relative">
       <div className="section-padding container-max text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -73,7 +73,7 @@ const Hero = () => {
         
         {/* Scroll indicator */}
         <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="hidden md:block absolute bottom-4 left-1/2 transform -translate-x-1/2 pointer-events-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
