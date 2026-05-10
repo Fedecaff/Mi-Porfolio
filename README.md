@@ -2,7 +2,7 @@
 
 Un portafolio web moderno y minimalista desarrollado con React, Vite y Tailwind CSS.
 
-## 🚀 Características
+##  Características
 
 - **Diseño Minimalista**: Paleta de colores sobria y elegante
 - **Totalmente Responsive**: Optimizado para todos los dispositivos
@@ -11,7 +11,7 @@ Un portafolio web moderno y minimalista desarrollado con React, Vite y Tailwind 
 - **Fácil Personalización**: Código limpio y bien documentado
 - **Deploy Automático**: Configurado para Netlify
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 - **React 18** - Biblioteca de JavaScript para interfaces de usuario
 - **Vite** - Herramienta de construcción rápida
@@ -19,7 +19,7 @@ Un portafolio web moderno y minimalista desarrollado con React, Vite y Tailwind 
 - **Framer Motion** - Biblioteca de animaciones para React
 - **Netlify** - Plataforma de deploy
 
-## 📦 Instalación
+##  Instalación
 
 1. **Instalar dependencias:**
    ```bash
@@ -41,7 +41,7 @@ Un portafolio web moderno y minimalista desarrollado con React, Vite y Tailwind 
    npm run preview
    ```
 
-## 🎨 Personalización
+##  Personalización
 
 ### Colores
 Los colores se definen en `tailwind.config.js`:
@@ -58,7 +58,7 @@ Los colores se definen en `tailwind.config.js`:
 - Agrega tus screenshots de proyectos en la carpeta `public/`
 - Actualiza las rutas en el componente `Projects.jsx`
 
-## 📱 Secciones del Portfolio
+##  Secciones del Portfolio
 
 1. **Hero Section**: Presentación principal con tu nombre y título
 2. **Sobre Mí**: Descripción personal y profesional
@@ -66,7 +66,7 @@ Los colores se definen en `tailwind.config.js`:
 4. **Skills**: Tecnologías y herramientas que manejas
 5. **Contacto**: Formulario de contacto y redes sociales
 
-## 🚀 Deploy en Netlify
+##  Deploy en Netlify
 
 1. **Conecta tu repositorio** a Netlify
 2. **Configuración automática**: El archivo `netlify.toml` ya está configurado
@@ -80,7 +80,7 @@ npm run build
 # Sube la carpeta 'dist' a Netlify
 ```
 
-## 📝 Personalización Pendiente
+##  Personalización Pendiente
 
 Antes de hacer deploy, asegúrate de personalizar:
 
@@ -91,10 +91,10 @@ Antes de hacer deploy, asegúrate de personalizar:
 - [ ] Descripción personal en la sección "Sobre Mí"
 - [ ] Ajustar skills según tu experiencia
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto es de uso libre. Puedes usarlo como base para tu propio portfolio.
 
 ---
 
-Desarrollado con ❤️ por Federico Gabriel Gomez Caffettaro
+Desarrollado por Federico Gabriel Gomez Caffettaro
