@@ -71,7 +71,6 @@ const Projects = () => {
       description: "Sistema integral de gestión de emergencias en tiempo real para bomberos voluntarios. Una aplicación web completa que permite la coordinación de emergencias, geolocalización de operadores, gestión de puntos de interés y notificaciones en tiempo real para mejorar la respuesta ante emergencias.",
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Socket.IO", "JavaScript ES6+", "Leaflet.js", "Bootstrap 5", "Railway"],
       githubUrl: "https://github.com/Fedecaff/mapa-emergencias",
-      liveUrl: "https://mapa-emergencias-git-main-federicos-projects-f9ae1da4.vercel.app/",
       imageUrl: "/imagen/captura pro bombero.png",
       features: [
         "Mapa interactivo con geolocalización cada 30s",
@@ -105,7 +104,6 @@ const Projects = () => {
       description: "Sitio web interactivo reutilizable para invitaciones digitales de boda, adaptado para nuevos novios y eventos. Desarrollado con HTML5, CSS3 y JavaScript vanilla, ofrece una experiencia elegante y personalizada con secciones dinámicas, cuenta regresiva y contenido multimedia.",
       technologies: ["HTML5", "CSS3", "JavaScript ES6+", "Google Fonts", "CSS Grid", "Flexbox", "Media Queries"],
       githubUrl: "https://github.com/Fedecaff/Boda",
-      liveUrl: "https://boda-antuco-susi.netlify.app/",
       imageUrl: "/imagen/captura pro boda.png",
       features: [
         "Diseño responsivo adaptable a todos los dispositivos",
@@ -193,17 +191,6 @@ const Projects = () => {
                         </svg>
                         GitHub
                       </a>
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-accent text-white px-4 py-2 rounded-lg font-medium hover:bg-accent/90 transition-colors flex items-center"
-                      >
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        Ver Demo
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -254,19 +241,6 @@ const Projects = () => {
                       </svg>
                       Ver Código
                     </a>
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary inline-flex items-center"
-                      >
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        Ver Demo
-                      </a>
-                    )}
                   </div>
 
                   {/* Detalle técnico desplegable */}
