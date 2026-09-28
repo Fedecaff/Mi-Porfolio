@@ -1,64 +1,71 @@
-# Federico Caffettaro — Portfolio
+# Federico Caffettaro · Portfolio
 
-Sitio one-page de **Federico Gabriel Gomez Caffettaro**, Desarrollador Full Stack. Stack: React 18, Vite, Tailwind CSS y Framer Motion. Texto en español.
+Portfolio profesional de Federico Caffettaro, desarrollador full stack freelance. Los casos corresponden a sistemas reales de clientes; su código es confidencial.
 
-Busco empleo en una empresa. El contenido sale del CV 2026 (sistemas en producción), no de proyectos de práctica.
+**Sitio en vivo:** https://mi-porfolio-caffettarro.netlify.app
 
-## Desarrollo local
+Este repositorio contiene solo el código del sitio del portfolio.
+
+## Stack
+
+- **React 18** con **Vite**
+- **Tailwind CSS** para estilos y **Framer Motion** para animaciones
+- **Netlify** para el hosting:
+  - **Netlify Forms** para el formulario de contacto (`contacto-profesional`)
+  - Cabeceras de seguridad en `public/_headers` (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`)
+  - Redirección SPA (`/* → /index.html`)
+
+## Correr el proyecto en local
+
+Requisitos: Node.js 18 o superior.
 
 ```bash
 npm install
-npm run dev
+npm run dev       # servidor de desarrollo
+npm run build     # build de producción en dist/
+npm run preview   # sirve el build localmente
 ```
 
-```bash
-npm run build
-npm run preview
+En local el formulario de contacto no envía a Netlify: los envíos solo funcionan en el sitio publicado.
+
+## Deploy
+
+Netlify despliega automáticamente cada push a `main` desde GitHub. La configuración está en `netlify.toml`:
+
+- Comando de build: `npm run build`
+- Carpeta publicada: `dist`
+
+## Estructura
+
+```
+public/
+  _headers                  cabeceras de seguridad
+  _redirects                redirección SPA
+  projects/<slug>/          capturas de cada caso (cover.webp)
+  CV-*.pdf, foto.jpg        CV descargable y foto
+src/
+  components/               secciones del sitio (Hero, Cases, Stack, Contact, etc.)
+  data/content.js           todo el contenido del sitio
+  lib/motion.js             variantes de animación
+index.html                  metadatos, Open Graph y formulario oculto para Netlify Forms
+netlify.toml                configuración de build y deploy
 ```
 
-`npm run build` genera `dist/`, listo para publicar en Netlify arrastrando esa carpeta.
+### Contenido
 
-## Deploy en Netlify (drag & drop)
+Todo el texto del sitio (perfil, casos, proceso de trabajo, stack, sobre mí y SEO) está en `src/data/content.js`. Para cambiar el contenido, se edita ese archivo y no hace falta tocar los componentes.
 
-1. `npm run build`
-2. Arrastrá la carpeta `dist/` al deploy de Netlify.
+### Capturas de los casos
 
-`dist/` incluye:
+Cada caso muestra una imagen solo si se cumplen dos condiciones:
 
-- `_redirects` — SPA (`/* → /index.html`)
-- `_headers` — cabeceras básicas
-- `index.html` con el formulario oculto **contacto-profesional** para [Netlify Forms](https://docs.netlify.com/forms/setup/)
+1. Existe el archivo `public/projects/<slug>/cover.webp`.
+2. El slug está incluido en `caseCoverSlugs` dentro de `src/data/content.js`.
 
-Si conectás el repo en lugar de subir `dist/`, `netlify.toml` usa `npm run build` y publica `dist/`.
+Si falta alguna de las dos, el caso se muestra solo con texto y no se pide ninguna imagen. Las capturas usan datos ficticios, nunca datos reales de clientes.
 
-El formulario se detecta en el HTML estático. En local (`npm run preview`) el envío no llega a Netlify: eso es esperado. En producción, los mensajes aparecen en **Forms** del sitio.
+## Contacto
 
-## Capturas de proyectos
-
-Cada caso muestra imagen solo si su slug está en `caseCoverSlugs` (`src/data/content.js`) y existe `public/projects/<slug>/cover.webp`. Si no, no se pide el archivo (evita 404) y el texto ocupa todo el ancho.
-
-| Caso | Carpeta |
-| --- | --- |
-| Rotisería con 3 sucursales | `public/projects/rotiseria/cover.webp` |
-| Somar Frutas y Verduras | `public/projects/somar/cover.webp` |
-| Food POS | `public/projects/food-pos/cover.webp` |
-| Fon.corner | `public/projects/fon-corner/cover.webp` |
-| SIHE | `public/projects/sihe/cover.webp` |
-
-Usá capturas con **datos ficticios**, no de producción. Poné `cover.webp` en la carpeta del caso y agregá el slug en `caseCoverSlugs`. Después volvé a construir.
-
-Los PDFs del CV y la foto viven en `public/`:
-
-- Botón **Descargar CV**: `CV-Federico-Caffettaro-2026-diseno.pdf`
-- Link secundario: `CV-Federico-Caffettaro-2026.pdf`
-- Foto: `foto.jpg` (circular, tamaño chico)
-
-## Contenido
-
-Textos en `src/data/content.js`. No inventar métricas ni enlazar sistemas en producción.
-
-La carpeta `_material-portfolio/` es material de trabajo (CV fuente, LinkedIn, propuesta) y está en `.gitignore`.
-
-## Open Graph
-
-`og:image`, `og:url` y `canonical` usan `https://mi-porfolio-caffettarro.netlify.app/`.
+- Email: federico.gomez.sc@gmail.com
+- LinkedIn: https://www.linkedin.com/in/federico-gabriel-gomez-caffettaro-109494408
+- GitHub: https://github.com/Fedecaff
