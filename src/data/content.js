@@ -9,7 +9,7 @@ export const profile = {
   github: 'https://github.com/Fedecaff',
   linkedin:
     'https://www.linkedin.com/in/federico-gabriel-gomez-caffettaro-109494408',
-  photo: '/foto.jpg',
+  photo: '/foto-perfil-512.webp',
   cvDesign: '/CV-Federico-Caffettaro-2026-diseno.pdf',
   cvSimple: '/CV-Federico-Caffettaro-2026.pdf',
   heroLead:
