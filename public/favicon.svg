@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#2c3e50"/>
-  <text x="16" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">FGC</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="FC">
+  <rect width="32" height="32" rx="8" fill="#0E0E0E"/>
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="7.25" fill="none" stroke="#FDC17B" stroke-width="1.5"/>
+  <path fill="#FDC17B" d="M10 8.5h12.2v2.4H12.6v4.15h8.4v2.35h-8.4V23.5H10V8.5z"/>
 </svg>

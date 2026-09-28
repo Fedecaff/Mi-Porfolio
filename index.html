@@ -4,14 +4,45 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FGC - Federico Gabriel Gomez Caffettaro | Portfolio</title>
-    <meta name="description" content="Portfolio de FGC - Federico Gabriel Gomez Caffettaro - Desarrollador Web Full Stack">
+    <meta name="theme-color" content="#0E0E0E" />
+    <title>Federico Caffettaro · Desarrollador Full Stack</title>
+    <link rel="canonical" href="https://mi-porfolio-caffettarro.netlify.app/" />
+    <meta
+      name="description"
+      content="Desarrollador Full Stack en Catamarca. Next.js, TypeScript y PostgreSQL (Supabase). Sistemas de gestión en producción para comercios. Hoy trabajo como freelance y busco sumarme a un equipo de desarrollo."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mi-porfolio-caffettarro.netlify.app/" />
+    <meta property="og:title" content="Federico Caffettaro · Desarrollador Full Stack" />
+    <meta
+      property="og:description"
+      content="Sistemas de gestión en producción con Next.js, TypeScript y PostgreSQL (Supabase). Hoy trabajo como freelance y busco sumarme a un equipo de desarrollo."
+    />
+    <meta property="og:image" content="https://mi-porfolio-caffettarro.netlify.app/foto.jpg" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Federico Caffettaro · Desarrollador Full Stack" />
+    <meta
+      name="twitter:description"
+      content="Desarrollador Full Stack. Next.js / TypeScript / PostgreSQL (Supabase)."
+    />
+    <meta name="twitter:image" content="https://mi-porfolio-caffettarro.netlify.app/foto.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
     <div id="root"></div>
-    <!-- Formulario estático para que Netlify detecte el form en el build (SPA + React) -->
-    <form name="contacto-profesional" method="POST" data-netlify="true" action="/" hidden>
+    <!-- Formulario estático para que Netlify detecte el form en deploy (SPA + drag & drop de dist/) -->
+    <form
+      name="contacto-profesional"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/"
+      hidden
+    >
       <input type="hidden" name="form-name" value="contacto-profesional" />
+      <input name="bot-field" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>

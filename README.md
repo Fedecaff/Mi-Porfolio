@@ -1,100 +1,64 @@
-# Portfolio de Federico Gabriel Gomez Caffettaro
+# Federico Caffettaro — Portfolio
 
-Un portafolio web moderno y minimalista desarrollado con React, Vite y Tailwind CSS.
+Sitio one-page de **Federico Gabriel Gomez Caffettaro**, Desarrollador Full Stack. Stack: React 18, Vite, Tailwind CSS y Framer Motion. Texto en español.
 
-##  Características
+Busco empleo en una empresa. El contenido sale del CV 2026 (sistemas en producción), no de proyectos de práctica.
 
-- **Diseño Minimalista**: Paleta de colores sobria y elegante
-- **Totalmente Responsive**: Optimizado para todos los dispositivos
-- **Animaciones Suaves**: Implementadas con Framer Motion
-- **SEO Optimizado**: Meta tags y estructura semántica
-- **Fácil Personalización**: Código limpio y bien documentado
-- **Deploy Automático**: Configurado para Netlify
+## Desarrollo local
 
-##  Tecnologías Utilizadas
-
-- **React 18** - Biblioteca de JavaScript para interfaces de usuario
-- **Vite** - Herramienta de construcción rápida
-- **Tailwind CSS** - Framework de CSS utilitario
-- **Framer Motion** - Biblioteca de animaciones para React
-- **Netlify** - Plataforma de deploy
-
-##  Instalación
-
-1. **Instalar dependencias:**
-   ```bash
-   npm install
-   ```
-
-2. **Ejecutar en modo desarrollo:**
-   ```bash
-   npm run dev
-   ```
-
-3. **Construir para producción:**
-   ```bash
-   npm run build
-   ```
-
-4. **Vista previa de la construcción:**
-   ```bash
-   npm run preview
-   ```
-
-##  Personalización
-
-### Colores
-Los colores se definen en `tailwind.config.js`:
-- `primary`: Color principal (azul grisáceo oscuro)
-- `secondary`: Color secundario (gris azulado)
-- `accent`: Color de acento (azul suave)
-
-### Contenido
-- **Proyectos**: Edita el array `projects` en `src/components/Projects.jsx`
-- **Skills**: Modifica `skillCategories` en `src/components/Skills.jsx`
-- **Información personal**: Actualiza los datos en cada componente
-
-### Imágenes
-- Agrega tus screenshots de proyectos en la carpeta `public/`
-- Actualiza las rutas en el componente `Projects.jsx`
-
-##  Secciones del Portfolio
-
-1. **Hero Section**: Presentación principal con tu nombre y título
-2. **Sobre Mí**: Descripción personal y profesional
-3. **Proyectos**: Showcase de tus trabajos con detalles técnicos
-4. **Skills**: Tecnologías y herramientas que manejas
-5. **Contacto**: Formulario de contacto y redes sociales
-
-##  Deploy en Netlify
-
-1. **Conecta tu repositorio** a Netlify
-2. **Configuración automática**: El archivo `netlify.toml` ya está configurado
-3. **Build settings**:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-
-### Deploy manual:
 ```bash
-npm run build
-# Sube la carpeta 'dist' a Netlify
+npm install
+npm run dev
 ```
 
-##  Personalización Pendiente
+```bash
+npm run build
+npm run preview
+```
 
-Antes de hacer deploy, asegúrate de personalizar:
+`npm run build` genera `dist/`, listo para publicar en Netlify arrastrando esa carpeta.
 
-- [ ] URLs de GitHub y LinkedIn en `Contact.jsx`
-- [ ] Email de contacto
-- [ ] Información de proyectos reales
-- [ ] Screenshots de tus proyectos
-- [ ] Descripción personal en la sección "Sobre Mí"
-- [ ] Ajustar skills según tu experiencia
+## Deploy en Netlify (drag & drop)
 
-##  Licencia
+1. `npm run build`
+2. Arrastrá la carpeta `dist/` al deploy de Netlify.
 
-Este proyecto es de uso libre. Puedes usarlo como base para tu propio portfolio.
+`dist/` incluye:
 
----
+- `_redirects` — SPA (`/* → /index.html`)
+- `_headers` — cabeceras básicas
+- `index.html` con el formulario oculto **contacto-profesional** para [Netlify Forms](https://docs.netlify.com/forms/setup/)
 
-Desarrollado por Federico Gabriel Gomez Caffettaro
+Si conectás el repo en lugar de subir `dist/`, `netlify.toml` usa `npm run build` y publica `dist/`.
+
+El formulario se detecta en el HTML estático. En local (`npm run preview`) el envío no llega a Netlify: eso es esperado. En producción, los mensajes aparecen en **Forms** del sitio.
+
+## Capturas de proyectos
+
+Cada caso muestra imagen solo si su slug está en `caseCoverSlugs` (`src/data/content.js`) y existe `public/projects/<slug>/cover.webp`. Si no, no se pide el archivo (evita 404) y el texto ocupa todo el ancho.
+
+| Caso | Carpeta |
+| --- | --- |
+| Rotisería con 3 sucursales | `public/projects/rotiseria/cover.webp` |
+| Somar Frutas y Verduras | `public/projects/somar/cover.webp` |
+| Food POS | `public/projects/food-pos/cover.webp` |
+| Fon.corner | `public/projects/fon-corner/cover.webp` |
+| SIHE | `public/projects/sihe/cover.webp` |
+
+Usá capturas con **datos ficticios**, no de producción. Poné `cover.webp` en la carpeta del caso y agregá el slug en `caseCoverSlugs`. Después volvé a construir.
+
+Los PDFs del CV y la foto viven en `public/`:
+
+- Botón **Descargar CV**: `CV-Federico-Caffettaro-2026-diseno.pdf`
+- Link secundario: `CV-Federico-Caffettaro-2026.pdf`
+- Foto: `foto.jpg` (circular, tamaño chico)
+
+## Contenido
+
+Textos en `src/data/content.js`. No inventar métricas ni enlazar sistemas en producción.
+
+La carpeta `_material-portfolio/` es material de trabajo (CV fuente, LinkedIn, propuesta) y está en `.gitignore`.
+
+## Open Graph
+
+`og:image`, `og:url` y `canonical` usan `https://mi-porfolio-caffettarro.netlify.app/`.

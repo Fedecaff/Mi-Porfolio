@@ -1,23 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       colors: {
-        // Paleta sobria y elegante
-        'primary': '#2c3e50',      // Azul grisáceo oscuro
-        'secondary': '#34495e',    // Gris azulado
-        'accent': '#3498db',       // Azul suave
-        'text-primary': '#2c3e50',
-        'text-secondary': '#7f8c8d',
-        'bg-light': '#ecf0f1',     // Gris muy claro
-        'bg-white': '#ffffff',
+        ink: {
+          DEFAULT: '#0E0E0E',
+          800: '#161616',
+          700: '#1C1C1C',
+          600: '#2A2A2A',
+        },
+        peach: {
+          DEFAULT: '#FDC17B',
+          hot: '#F4A24A',
+        },
+        cream: '#F6F1EA',
+        muted: '#C9C3BA',
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
+        body: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+      },
+      maxWidth: {
+        page: '72rem',
+      },
+      boxShadow: {
+        focus: '0 0 0 3px rgba(253, 193, 123, 0.45)',
       },
     },
   },

@@ -34,6 +34,9 @@ dist-ssr
 build/
 dist/
 
+# Material de trabajo (CV, LinkedIn, foto fuente). No subir al repo.
+_material-portfolio/
+
 # Cache
 .cache
 .parcel-cache

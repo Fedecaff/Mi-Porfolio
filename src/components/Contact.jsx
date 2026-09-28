@@ -1,269 +1,237 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
+import { profile } from '../data/content'
+import { fadeUp, viewportOnce } from '../lib/motion'
+import { IconGitHub, IconLinkedIn, IconMail } from './Icons'
+import SectionHeading from './SectionHeading'
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
+const initial = { name: '', email: '', message: '' }
+
+export default function Contact() {
+  const reduce = useReducedMotion()
+  const variants = fadeUp(reduce)
+  const [formData, setFormData] = useState(initial)
   const [errors, setErrors] = useState({})
   const [submitStatus, setSubmitStatus] = useState('idle')
 
   const validateForm = () => {
-    const newErrors = {}
-
-    if (!formData.name.trim()) newErrors.name = 'El nombre es obligatorio.'
+    const next = {}
+    if (!formData.name.trim()) next.name = 'El nombre es obligatorio.'
     if (!formData.email.trim()) {
-      newErrors.email = 'El email es obligatorio.'
+      next.email = 'El email es obligatorio.'
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Ingresa un email válido.'
+      next.email = 'Ingresá un email válido.'
     }
-    if (!formData.message.trim()) newErrors.message = 'El mensaje es obligatorio.'
-
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
+    if (!formData.message.trim()) next.message = 'El mensaje es obligatorio.'
+    setErrors(next)
+    return Object.keys(next).length === 0
   }
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
+  const handleChange = (event) => {
+    const { name, value } = event.target
     setFormData((prev) => ({ ...prev, [name]: value }))
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }))
-    }
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }))
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async (event) => {
+    event.preventDefault()
     setSubmitStatus('idle')
-
     if (!validateForm()) return
 
     setSubmitStatus('sending')
-
-    const form = e.currentTarget
-    const formData = new FormData(form)
+    const payload = new FormData(event.currentTarget)
 
     try {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: new URLSearchParams(payload).toString(),
       })
-
-      if (!response.ok) throw new Error('Error en envío')
-
+      if (!response.ok) throw new Error('send-failed')
       setSubmitStatus('success')
-      setFormData({ name: '', email: '', message: '' })
+      setFormData(initial)
       setErrors({})
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     }
   }
 
+  const fieldClass =
+    'w-full rounded-md border border-ink-600 bg-ink px-4 py-3 text-cream placeholder:text-muted/70 focus:border-peach'
+
   return (
-    <section id="contact" className="py-20 bg-primary text-white">
-      <div className="section-padding container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <p className="text-lg text-gray-200 mb-4">
-            ¿Te interesa trabajar conmigo o conocer más sobre mis proyectos?
-          </p>
-          <a
-            href="#contact-form"
-            className="inline-flex items-center px-6 py-3 rounded-lg font-medium bg-accent text-white hover:bg-accent/90 transition-colors"
-          >
-            Contactarme
-          </a>
-        </motion.div>
+    <section id="contacto" className="py-20 sm:py-24">
+      <div className="container-max section-padding">
+        <SectionHeading
+          kicker="Contacto"
+          title="Hablemos"
+          description="Si estás evaluando un perfil Full Stack para tu equipo, escribime. Respondo a este correo y al formulario."
+        />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Contacto Profesional
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Estoy disponible para procesos de selección en empresas que busquen un perfil Full Stack en crecimiento, con foco en JavaScript y desarrollo de aplicaciones web.
-          </p>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Información de contacto */}
+        <div className="grid gap-12 lg:grid-cols-12">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            className="lg:col-span-5"
+            initial="hidden"
+            whileInView="show"
+            viewport={viewportOnce}
+            variants={variants}
           >
-            <h3 className="text-2xl font-bold mb-6">Información de Contacto</h3>
-            
-            <div className="grid gap-4 mb-8">
-              <div className="bg-secondary/40 rounded-xl p-4 min-h-[110px] flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0l-3 3m3-3l-3-3M4 6h16M4 18h16" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-gray-300 break-all">federico.gomez.sc@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="bg-secondary/40 rounded-xl p-4 min-h-[110px] flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium">Ubicación</p>
-                  <p className="text-gray-300">San Fernando del Valle de Catamarca, Catamarca, Argentina</p>
-                </div>
-              </div>
-
-              <div className="bg-secondary/40 rounded-xl p-4 min-h-[110px] flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium">Disponibilidad</p>
-                  <p className="text-gray-300">Disponible para incorporación laboral</p>
-                </div>
-              </div>
-            </div>
+            <ul className="space-y-5 text-sm">
+              <li>
+                <p className="font-sans font-semibold text-cream">Email</p>
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="mt-1 inline-flex items-center gap-2 text-peach hover:underline"
+                >
+                  <IconMail />
+                  {profile.email}
+                </a>
+              </li>
+              <li>
+                <p className="font-sans font-semibold text-cream">Ubicación</p>
+                <p className="mt-1 text-muted">{profile.location}</p>
+              </li>
+              <li>
+                <p className="font-sans font-semibold text-cream">Teléfono</p>
+                <a href={profile.phoneHref} className="mt-1 text-muted hover:text-peach">
+                  {profile.phone}
+                </a>
+              </li>
+              <li className="flex gap-3 pt-2">
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  <IconGitHub />
+                  GitHub
+                </a>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  <IconLinkedIn />
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
           </motion.div>
 
-          {/* Formulario de contacto */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
+            className="lg:col-span-7"
+            initial="hidden"
+            whileInView="show"
+            viewport={viewportOnce}
+            variants={variants}
           >
-            <div className="bg-secondary/50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-4">Envíame un mensaje</h3>
-              <p className="text-gray-300 mb-6">
-                Completa el formulario y te responderé a la brevedad.
+            <form
+              id="contact-form"
+              name="contacto-profesional"
+              method="POST"
+              action="/"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="space-y-4 rounded-md border border-ink-600 bg-ink-800 p-6 sm:p-8"
+              noValidate
+            >
+              <input type="hidden" name="form-name" value="contacto-profesional" />
+              <p className="hidden">
+                <label>
+                  No completar este campo
+                  <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                </label>
               </p>
 
-              <form
-                id="contact-form"
-                name="contacto-profesional"
-                method="POST"
-                action="/"
-                data-netlify="true"
-                onSubmit={handleSubmit}
-                className="space-y-4 text-left"
-              >
-                <input type="hidden" name="form-name" value="contacto-profesional" />
+              <div>
+                <label htmlFor="name" className="mb-1 block text-sm font-medium text-cream">
+                  Nombre
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={fieldClass}
+                  placeholder="Tu nombre"
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? 'error-name' : undefined}
+                />
+                {errors.name ? (
+                  <p id="error-name" className="mt-1 text-sm text-peach-hot">
+                    {errors.name}
+                  </p>
+                ) : null}
+              </div>
 
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">Nombre</label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full rounded-lg px-4 py-3 bg-white text-primary border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
-                    placeholder="Tu nombre"
-                  />
-                  {errors.name && <p className="text-red-300 text-sm mt-1">{errors.name}</p>}
-                </div>
+              <div>
+                <label htmlFor="email" className="mb-1 block text-sm font-medium text-cream">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={fieldClass}
+                  placeholder="tu@email.com"
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? 'error-email' : undefined}
+                />
+                {errors.email ? (
+                  <p id="error-email" className="mt-1 text-sm text-peach-hot">
+                    {errors.email}
+                  </p>
+                ) : null}
+              </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full rounded-lg px-4 py-3 bg-white text-primary border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
-                    placeholder="tu@email.com"
-                  />
-                  {errors.email && <p className="text-red-300 text-sm mt-1">{errors.email}</p>}
-                </div>
+              <div>
+                <label htmlFor="message" className="mb-1 block text-sm font-medium text-cream">
+                  Mensaje
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className={fieldClass}
+                  placeholder="Contame sobre la búsqueda o el equipo."
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? 'error-message' : undefined}
+                />
+                {errors.message ? (
+                  <p id="error-message" className="mt-1 text-sm text-peach-hot">
+                    {errors.message}
+                  </p>
+                ) : null}
+              </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">Mensaje</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full rounded-lg px-4 py-3 bg-white text-primary border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
-                    placeholder="Cuéntame sobre la oportunidad o proyecto."
-                  />
-                  {errors.message && <p className="text-red-300 text-sm mt-1">{errors.message}</p>}
-                </div>
+              <button type="submit" disabled={submitStatus === 'sending'} className="btn-primary w-full">
+                {submitStatus === 'sending' ? 'Enviando…' : 'Enviar mensaje'}
+              </button>
 
-                <button
-                  type="submit"
-                  disabled={submitStatus === 'sending'}
-                  className="w-full bg-accent text-white py-3 px-4 rounded-lg font-medium hover:bg-accent/90 transition-colors disabled:opacity-70"
-                >
-                  {submitStatus === 'sending' ? 'Enviando...' : 'Enviar mensaje'}
-                </button>
-              </form>
-
-              {submitStatus === 'success' && (
-                <p className="text-green-300 text-sm mt-4">
-                  Enviado correctamente.
-                </p>
-              )}
-              {submitStatus === 'error' && (
-                <p className="text-red-300 text-sm mt-4">
-                  No se pudo enviar. Intenta nuevamente.
-                </p>
-              )}
-
-              <p className="text-gray-300 text-sm mt-6 text-center">
-                O podés escribirme directamente a:{' '}
-                <a
-                  href="mailto:federico.gomez.sc@gmail.com"
-                  className="text-accent hover:underline font-medium"
-                >
-                  federico.gomez.sc@gmail.com
-                </a>
-              </p>
-            </div>
+              <div role="status" aria-live="polite">
+                {submitStatus === 'success' ? (
+                  <p className="text-sm text-peach">Enviado. Te respondo a la brevedad.</p>
+                ) : null}
+                {submitStatus === 'error' ? (
+                  <p className="text-sm text-peach-hot">
+                    No se pudo enviar desde acá. Escribime a {profile.email}.
+                  </p>
+                ) : null}
+              </div>
+            </form>
           </motion.div>
         </div>
-
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mt-16 pt-8 border-t border-gray-600"
-        >
-          <p className="text-gray-300">
-            © 2026 FGC - Federico Gabriel Gomez Caffettaro
-          </p>
-          <p className="text-gray-400 text-sm mt-2">
-            Desarrollado con React + Vite + Tailwind CSS
-          </p>
-        </motion.div>
       </div>
     </section>
   )
 }
-
-export default Contact
