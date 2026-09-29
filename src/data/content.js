@@ -124,7 +124,7 @@ export const processSteps = [
 
 export const iaPractice = {
   title: 'Agentes de IA, con criterio',
-  text: 'Integro agentes de IA al desarrollo de forma estructurada: defino especificaciones y tareas acotadas, reparto el trabajo entre agentes y uso agentes separados para auditar seguridad, detectar bugs y revisar código. La revisión y la validación final son siempre mías.',
+  text: 'Trabajo con agentes de IA de forma estructurada: defino alcance y restricciones por tarea (qué archivos pueden tocar, qué no, y cómo verificar el resultado con build, lint y pruebas), reviso cada cambio antes de integrarlo y uso un agente para auditar el trabajo de otro.',
 }
 
 export const automation = {
